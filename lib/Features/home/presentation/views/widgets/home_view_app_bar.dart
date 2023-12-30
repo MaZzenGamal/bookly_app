@@ -7,7 +7,7 @@ AppBar homeViewAppBar() {
     automaticallyImplyLeading: false,
     forceMaterialTransparency: true,
     title: Padding(
-      padding: const EdgeInsets.only(left: 14),
+      padding: const EdgeInsets.only(left: 16),
       child: Image.asset(
         AssetsData.logo,
         width: 75,
@@ -16,7 +16,7 @@ AppBar homeViewAppBar() {
     ),
     actions: [
       Padding(
-        padding: const EdgeInsets.only(right: 14),
+        padding: const EdgeInsets.only(right: 30),
         child: IconButton(
             onPressed: () {},
             icon: const Icon(
