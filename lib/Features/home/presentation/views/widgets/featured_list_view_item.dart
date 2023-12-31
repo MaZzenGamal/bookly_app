@@ -9,7 +9,7 @@ class BuildFeaturedListViewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 129 / 193,
+      aspectRatio: 129.21 / 193.3,
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
