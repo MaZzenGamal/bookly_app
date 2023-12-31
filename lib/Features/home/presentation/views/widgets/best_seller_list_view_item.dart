@@ -60,22 +60,14 @@ class BestSellerListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 8,
                   ),
-                  Row(
+                  const Row(
                     children: [
-                      const Text(
+                      Text(
                         '19.99 €',
                         style: Styles.textStyle15,
                       ),
                       Spacer(),
-                      const BookRating(),
-                      const SizedBox(
-                        width: 6,
-                      ),
-                      Text(
-                        '(2390)',
-                        style: Styles.textStyle14
-                            .copyWith(color: Colors.white.withOpacity(0.50)),
-                      ),
+                      BookRating(),
                     ],
                   )
                 ],
