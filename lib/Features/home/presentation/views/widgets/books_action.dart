@@ -27,7 +27,6 @@ class BooksAction extends StatelessWidget {
           onPressed: () {},
           text: 'Free preview',
           textStyle: Styles.textStyle14.copyWith(
-            // fontFamily: GoogleFonts.daiBannaSi
           ),
           borderRadius: const BorderRadius.only(
             topRight: Radius.circular(15),

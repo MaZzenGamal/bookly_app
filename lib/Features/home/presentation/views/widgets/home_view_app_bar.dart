@@ -20,12 +20,13 @@ AppBar homeViewAppBar(context) {
       Padding(
         padding: const EdgeInsets.only(right: 30),
         child: IconButton(
-            onPressed: () {
-              GoRouter.of(context).push(AppRouter.kSearchView);
-            },
-            icon: const Icon(
-              FontAwesomeIcons.magnifyingGlass,
-            )),
+          onPressed: () {
+            GoRouter.of(context).push(AppRouter.kSearchView);
+          },
+          icon: const Icon(
+            FontAwesomeIcons.magnifyingGlass,
+          ),
+        ),
       )
     ],
   );
