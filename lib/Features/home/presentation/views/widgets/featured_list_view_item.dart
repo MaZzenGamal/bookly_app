@@ -1,11 +1,11 @@
 import 'package:blur/blur.dart';
-import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class BuildFeaturedListViewItem extends StatelessWidget {
-  const BuildFeaturedListViewItem({super.key});
+  const BuildFeaturedListViewItem({super.key, required this.imageUrl});
 
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
@@ -14,10 +14,11 @@ class BuildFeaturedListViewItem extends StatelessWidget {
         alignment: Alignment.bottomRight,
         children: [
           Container(
-            decoration: const BoxDecoration(
+            decoration:  BoxDecoration(
+              borderRadius: BorderRadiusDirectional.circular(18),
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(AssetsData.test),
+                image: NetworkImage(imageUrl),
               ),
             ),
           ),
