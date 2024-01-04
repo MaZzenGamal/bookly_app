@@ -15,15 +15,6 @@ class BuildFeaturedListViewItem extends StatelessWidget {
         alignment: Alignment.bottomRight,
         children: [
           CustomBookImage(imageUrl: imageUrl,),
-          // Container(
-          //   decoration:  BoxDecoration(
-          //     borderRadius: BorderRadiusDirectional.circular(14),
-          //     image: DecorationImage(
-          //       fit: BoxFit.fill,
-          //       image: NetworkImage(imageUrl),
-          //     ),
-          //   ),
-          // ),
           Padding(
             padding: const EdgeInsets.all(10),
             child: const SizedBox(
