@@ -1,4 +1,5 @@
 import 'package:blur/blur.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -13,24 +14,25 @@ class BuildFeaturedListViewItem extends StatelessWidget {
       child: Stack(
         alignment: Alignment.bottomRight,
         children: [
-          Container(
-            decoration:  BoxDecoration(
-              borderRadius: BorderRadiusDirectional.circular(18),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(imageUrl),
-              ),
-            ),
-          ),
+          CustomBookImage(imageUrl: imageUrl,),
+          // Container(
+          //   decoration:  BoxDecoration(
+          //     borderRadius: BorderRadiusDirectional.circular(14),
+          //     image: DecorationImage(
+          //       fit: BoxFit.fill,
+          //       image: NetworkImage(imageUrl),
+          //     ),
+          //   ),
+          // ),
           Padding(
-            padding: const EdgeInsets.all(14),
+            padding: const EdgeInsets.all(10),
             child: const SizedBox(
-              width: 50,
-              height: 50,
+              width: 30,
+              height: 30,
             ).blurred(
                 blur: 8,
                 colorOpacity: 0.25,
-                borderRadius: BorderRadius.circular(50),
+                borderRadius: BorderRadius.circular(30),
                 overlay: const Icon(
                   FontAwesomeIcons.play,
                   size: 10,
