@@ -24,7 +24,9 @@ class BookListViewItem extends StatelessWidget {
           children: [
             SizedBox(
               height: 114,
-              child: CustomBookImage(imageUrl: bookModel.volumeInfo!.imageLinks!.thumbnail!),
+              child: CustomBookImage(
+                  imageUrl: bookModel.volumeInfo?.imageLinks?.thumbnail ??
+                      'https://www.peeters-leuven.be/covers/no_cover.gif'),
             ),
             const SizedBox(
               width: 30,
@@ -35,7 +37,7 @@ class BookListViewItem extends StatelessWidget {
                 children: [
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
-                    child:  Text(
+                    child: Text(
                       bookModel.volumeInfo!.title!,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 2,
@@ -45,22 +47,23 @@ class BookListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                  Text(
-                    bookModel.volumeInfo!.authors![0],
-                    style: Styles.textStyle14
-                        .copyWith(color: Colors.white.withOpacity(0.70)),
-                  ),
+                  if (bookModel.volumeInfo!.authors!.isNotEmpty)
+                    Text(
+                      bookModel.volumeInfo!.authors![0],
+                      style: Styles.textStyle14
+                          .copyWith(color: Colors.white.withOpacity(0.70)),
+                    ),
                   const SizedBox(
                     height: 8,
                   ),
-                    Row(
+                  Row(
                     children: [
                       const Text(
                         'Free',
                         style: Styles.textStyle15,
                       ),
                       const Spacer(),
-                      BookRating(rating:bookModel.volumeInfo!.maturityRating! ,count:bookModel.volumeInfo!.pageCount! ),
+                      BookRating(count: bookModel.volumeInfo?.pageCount ?? 0),
                     ],
                   )
                 ],
