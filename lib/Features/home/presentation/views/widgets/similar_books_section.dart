@@ -1,10 +1,10 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
-import 'suggestions_list_view.dart';
+import 'similar_list_view.dart';
 
-class SuggestionsBooksSection extends StatelessWidget {
-  const SuggestionsBooksSection({super.key});
+class SimilarBooksSection extends StatelessWidget {
+  const SimilarBooksSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class SuggestionsBooksSection extends StatelessWidget {
         ),
         const Padding(
           padding: EdgeInsets.only(left: 30),
-          child: SuggestionsListView(),
+          child: SimilarListView(),
         ),
       ],
     );

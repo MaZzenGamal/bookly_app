@@ -1,8 +1,8 @@
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
-class SuggestionsListViewItem extends StatelessWidget {
-  const SuggestionsListViewItem({super.key});
+class SimilarListViewItem extends StatelessWidget {
+  const SimilarListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {

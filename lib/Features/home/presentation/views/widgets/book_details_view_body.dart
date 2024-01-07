@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'book_details_section.dart';
-import 'suggestions_books_section.dart';
+import 'similar_books_section.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
   const BookDetailsViewBody({super.key});
@@ -20,7 +20,7 @@ class BookDetailsViewBody extends StatelessWidget {
                   height: 50,
                 ),
               ),
-              SuggestionsBooksSection(),
+              SimilarBooksSection(),
               SizedBox(
                 height: 25,
               )
