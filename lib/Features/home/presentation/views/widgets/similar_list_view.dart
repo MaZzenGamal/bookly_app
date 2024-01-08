@@ -11,24 +11,28 @@ class SimilarListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<SimilarBooksCubit, SimilarBooksState>(
       builder: (context, state) {
-        if(state is SimilarBooksSuccess) {
+        if (state is SimilarBooksSuccess) {
           return SizedBox(
-          height: 112,
-          child: ListView.separated(
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                return const SimilarListViewItem();
-              },
-              separatorBuilder: (context, index) {
-                return const SizedBox(
-                  width: 8,
-                );
-              },
-              itemCount: 10),
-        );
-        }else if(state is SimilarBooksFailure){
+            height: 112,
+            child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return SimilarListViewItem(
+                    bookModel: state.books[index],
+                    imageUrl:
+                        state.books[index].volumeInfo!.imageLinks?.thumbnail ?? '',
+                  );
+                },
+                separatorBuilder: (context, index) {
+                  return const SizedBox(
+                    width: 8,
+                  );
+                },
+                itemCount: 10),
+          );
+        } else if (state is SimilarBooksFailure) {
           return CustomErrorMessage(errorMessage: state.error);
-        }else{
+        } else {
           return const Center(child: CircularProgressIndicator());
         }
       },

@@ -1,18 +1,28 @@
-import 'package:bookly/core/utils/assets.dart';
+import 'package:bookly/Features/home/data/models/book_model/Book_model.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SimilarListViewItem extends StatelessWidget {
-  const SimilarListViewItem({super.key});
+  const SimilarListViewItem({super.key, required this.imageUrl, required this.bookModel});
 
+  final BookModel bookModel;
+  final String imageUrl;
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 70 / 112,
-      child: Container(
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.fill,
-            image: AssetImage(AssetsData.test),
+    return GestureDetector(
+      onTap: (){
+        GoRouter.of(context).push(AppRouter.kBookDetailsView,extra: bookModel);
+      },
+      child: AspectRatio(
+        aspectRatio: 70 / 112,
+        child: Container(
+          decoration:  BoxDecoration(
+            borderRadius: BorderRadius.circular(16),
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: NetworkImage(imageUrl),
+            ),
           ),
         ),
       ),
