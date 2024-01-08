@@ -13,16 +13,5 @@ AppBar bookDetailsViewAppBar(context) {
       },
       icon: const Icon(FontAwesomeIcons.xmark,),
     ),
-    actions: [
-      Padding(
-        padding: const EdgeInsets.only(right: 30),
-        child: IconButton(
-          iconSize: 25,
-            onPressed: () {},
-            icon: const Icon(
-              Icons.shopping_cart_outlined,
-            )),
-      )
-    ],
   );
 }
