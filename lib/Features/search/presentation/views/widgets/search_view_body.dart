@@ -1,51 +1,48 @@
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import 'custom_search_form_field.dart';
+import 'search_result_list_view.dart';
 
 class SearchViewBody extends StatelessWidget {
-  const SearchViewBody({super.key});
+  const SearchViewBody({super.key,});
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.symmetric(horizontal: 30),
-          child: CustomSearchFormField(),
+          padding: const EdgeInsets.symmetric(horizontal: 18),
+          child: SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Row(
+              children: [
+                IconButton(onPressed: (){
+                  GoRouter.of(context).pop();
+                }, icon: const Icon(
+                  Icons.arrow_back
+                )),
+                Expanded(child: Center(child: CustomSearchFormField())),
+              ],
+            ),
+          ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
-        Padding(
-          padding: EdgeInsets.only(left: 30,bottom: 8),
+        const Padding(
+          padding: EdgeInsets.only(left: 30, bottom: 8),
           child: Text(
-            'Best Seller',
+            'Result',
             style: Styles.textStyle18,
           ),
         ),
-        Expanded(child: SearchResultListView()),
+        const Expanded(child: SearchResultListView()),
       ],
     );
   }
 }
 
-class SearchResultListView extends StatelessWidget {
-  const SearchResultListView({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return ListView.separated(
-        itemBuilder: (context,index){
-          //return const BookListViewItem();
-          return Text('hhhh');
-        },
-        separatorBuilder: (context,index){
-          return const SizedBox(
-            height: 20,
-          );
-        },
-        itemCount: 20);
-  }
-}

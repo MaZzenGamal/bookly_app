@@ -1,4 +1,5 @@
 import 'package:bookly/Features/home/data/models/repos/home_repo_imp.dart';
+import 'package:bookly/Features/search/data/repos/search_repo_imp.dart';
 import 'package:bookly/core/utils/api_services.dart';
 import 'package:get_it/get_it.dart';
 
@@ -9,5 +10,10 @@ void setupServiceLocator() {
     HomeRepoImp(
       ApiService(),
     ),
+  );
+  getIt.registerSingleton<SearchRepoImp>(
+    SearchRepoImp(
+      ApiService()
+    )
   );
 }
